@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { japaneseStrip, site, fallbackGallery } from "@/lib/data";
+import { Instagram } from "lucide-react";
+import { japaneseStrip, site } from "@/lib/data";
+import { Button } from "@/components/ui/button";
 
 export function Footer() {
-  const preview = fallbackGallery.slice(0, 4);
   const marqueeItems = [...japaneseStrip, ...japaneseStrip];
 
   return (
@@ -75,24 +76,16 @@ export function Footer() {
         </div>
 
         <div className="space-y-4">
-          <p className="font-cinzel text-lg text-[var(--text-primary)]">
-            Feed Preview
+          <p className="font-cinzel text-lg text-[var(--text-primary)]">Instagram</p>
+          <p className="max-w-sm text-sm leading-7 text-[var(--text-muted)]">
+            Follow Raven Store for new drops, dessert highlights, and late-night moments from Tirana.
           </p>
-          <div className="grid grid-cols-4 gap-2">
-            {preview.map((item) => (
-              <div
-                key={item.id}
-                className="relative aspect-square overflow-hidden rounded-2xl border border-[var(--border-subtle)]"
-              >
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
+          <Button asChild variant="secondary">
+            <a href={site.instagram} target="_blank" rel="noreferrer">
+              <Instagram size={16} />
+              @ravenstore.al
+            </a>
+          </Button>
         </div>
       </div>
       <div className="border-t border-[var(--border-subtle)] px-5 py-4 text-center text-xs uppercase tracking-[0.24em] text-[var(--text-muted)] md:px-8">

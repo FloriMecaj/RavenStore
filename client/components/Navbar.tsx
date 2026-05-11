@@ -169,6 +169,15 @@ export function Navbar() {
                   <p className="mt-3 text-sm leading-7 text-[var(--text-primary)]">
                     Jewelry, coffee, dessert, and crimson light. Open until 11 PM.
                   </p>
+                  <a
+                    href={site.instagram}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-4 inline-flex items-center gap-3 rounded-full border border-[var(--border-subtle)] px-4 py-3 text-xs uppercase tracking-[0.22em] text-[var(--text-primary)] transition-all hover:border-[var(--accent-crimson)] hover:text-white"
+                  >
+                    <Instagram size={16} />
+                    Instagram
+                  </a>
                 </motion.div>
               </div>
             </motion.div>
