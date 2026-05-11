@@ -37,9 +37,19 @@ export default function HomePage() {
   return (
     <div>
       <section className="relative isolate overflow-hidden">
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[48%] md:block">
+          <Image
+            src="/images/image1.jpg"
+            alt="Raven Store jewelry background"
+            fill
+            priority
+            className="object-cover object-center opacity-20 mix-blend-screen"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,4,5,0.98)_0%,rgba(10,4,5,0.8)_35%,rgba(10,4,5,0.22)_100%)]" />
+        </div>
         <div className="hero-fog absolute inset-0" />
         <ParticleField />
-        <div className="mx-auto flex min-h-[calc(100vh-6rem)] max-w-7xl flex-col justify-center px-5 py-20 md:px-8">
+        <div className="relative z-10 mx-auto flex min-h-[calc(100vh-6rem)] max-w-7xl flex-col justify-center px-5 py-20 md:px-8">
           <div className="max-w-4xl">
             <Badge
               variant="outline"

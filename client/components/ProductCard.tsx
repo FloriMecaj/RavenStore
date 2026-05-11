@@ -17,16 +17,16 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
       viewport={{ once: true, amount: 0.25 }}
       transition={{ delay: index * 0.06, duration: 0.55 }}
       whileHover={{ y: -8 }}
-      className="group relative overflow-hidden rounded-[2rem] border border-[var(--border-subtle)] bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))] p-5 shadow-card"
+      className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-[var(--border-subtle)] bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))] p-5 shadow-card"
     >
       <span className="absolute right-4 top-3 text-6xl text-[rgba(255,255,255,0.05)]">{product.watermark}</span>
       <div className="relative mb-5 aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[rgba(255,255,255,0.02)]">
         <Image src={product.image} alt={product.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(10,4,5,0.68))]" />
       </div>
-      <div className="space-y-3">
+      <div className="flex flex-1 flex-col">
         <div className="flex items-start justify-between gap-4">
-          <div>
+          <div className="flex-1">
             <p className="font-cinzel text-lg text-[var(--text-primary)]">{product.name}</p>
             <p className="mt-1 text-sm text-[var(--text-muted)]">{product.description}</p>
           </div>
@@ -40,7 +40,7 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
             <Heart size={16} fill={liked ? "currentColor" : "none"} />
           </motion.button>
         </div>
-        <div className="flex items-center justify-between">
+        <div className="mt-auto flex items-center justify-between pt-6">
           <p className="text-sm uppercase tracking-[0.24em] text-[var(--accent-gold)]">{formatPrice(product.price)}</p>
           <span className="text-xs uppercase tracking-[0.24em] text-[var(--text-muted)]">{product.category}</span>
         </div>

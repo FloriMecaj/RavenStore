@@ -2,7 +2,7 @@ export type Product = {
   id: string;
   name: string;
   price: number;
-  category: "Necklaces" | "Rings" | "Bracelets" | "T-Shirts" | "Stickers" | "Accessories";
+  category: "Necklaces" | "Rings" | "Bracelets" | "Stickers" | "Accessories";
   image: string;
   watermark: string;
   featured?: boolean;
@@ -78,7 +78,7 @@ export const products: Product[] = [
     id: "akuma-tee",
     name: "Akuma Raven Tee",
     price: 2500,
-    category: "T-Shirts",
+    category: "Accessories",
     image: "/images/image3.jpg",
     watermark: "鴉",
     description: "Soft black cotton with a crimson raven crest."

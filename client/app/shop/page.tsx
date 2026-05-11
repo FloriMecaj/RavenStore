@@ -6,7 +6,7 @@ export const metadata = {
   description: "Curated anime jewelry, accessories, clothing, and small dark treasures."
 };
 
-const categories = ["All", "Necklaces", "Rings", "Bracelets", "T-Shirts", "Stickers", "Accessories"] as const;
+const categories = ["All", "Necklaces", "Rings", "Bracelets", "Stickers", "Accessories"] as const;
 
 export default function ShopPage() {
   const featured = products.filter((product) => product.featured);
