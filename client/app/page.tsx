@@ -174,7 +174,7 @@ export default function HomePage() {
         <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="relative overflow-hidden rounded-[2.25rem] border border-[var(--border-subtle)] min-h-[520px]">
             <Image
-              src="/images/gallery-dessert-lotus.svg"
+              src="/images/food3.jpg"
               alt="Lotus dessert"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"

@@ -41,7 +41,7 @@ export const products: Product[] = [
     name: "Raven Pendant Crimson Cross",
     price: 3200,
     category: "Necklaces",
-    image: "/images/jewelry-raven-cross.svg",
+    image: "/images/image1.jpg",
     watermark: "紅",
     featured: true,
     description: "Polished metal, blood-red stone, midnight aura."
@@ -51,7 +51,7 @@ export const products: Product[] = [
     name: "Raven Pendant Silver Sigil",
     price: 3400,
     category: "Necklaces",
-    image: "/images/jewelry-raven-sigil.svg",
+    image: "/images/image6.jpg",
     watermark: "月",
     featured: true,
     description: "Silver geometry with an anime relic finish."
@@ -61,7 +61,7 @@ export const products: Product[] = [
     name: "Velvet Rose Ring",
     price: 1900,
     category: "Rings",
-    image: "/images/product-ring.svg",
+    image: "/images/image7.jpg",
     watermark: "影",
     description: "A small gothic bloom forged for quiet drama."
   },
@@ -70,7 +70,7 @@ export const products: Product[] = [
     name: "Obsidian Thread Bracelet",
     price: 1600,
     category: "Bracelets",
-    image: "/images/product-bracelet.svg",
+    image: "/images/image9.jpg",
     watermark: "夜",
     description: "Layered cords and black stone for everyday edge."
   },
@@ -79,7 +79,7 @@ export const products: Product[] = [
     name: "Akuma Raven Tee",
     price: 2500,
     category: "T-Shirts",
-    image: "/images/product-shirt.svg",
+    image: "/images/image3.jpg",
     watermark: "鴉",
     description: "Soft black cotton with a crimson raven crest."
   },
@@ -88,7 +88,7 @@ export const products: Product[] = [
     name: "Moon Shrine Sticker Pack",
     price: 900,
     category: "Stickers",
-    image: "/images/product-stickers.svg",
+    image: "/images/image8.jpg",
     watermark: "星",
     description: "Glossy mini icons for laptops, journals, and cases."
   },
@@ -97,7 +97,7 @@ export const products: Product[] = [
     name: "Gothic Keychain Sigil",
     price: 1200,
     category: "Accessories",
-    image: "/images/product-keychain.svg",
+    image: "/images/image4.jpg",
     watermark: "夢",
     description: "Small accessory, loud presence."
   }
@@ -125,73 +125,73 @@ export const menu = {
 export const fallbackGallery: GalleryItem[] = [
   {
     id: "g1",
-    image: "/images/gallery-pendant-red.svg",
+    image: "/images/image1.jpg",
     title: "Crimson pendant spotlight",
     category: "Products"
   },
   {
     id: "g2",
-    image: "/images/gallery-cafe-night.svg",
+    image: "/images/food2.jpg",
     title: "Late-night café glow",
     category: "Cafe"
   },
   {
     id: "g3",
-    image: "/images/gallery-dessert-lotus.svg",
+    image: "/images/food3.jpg",
     title: "Lotus dessert ritual",
     category: "Cafe"
   },
   {
     id: "g4",
-    image: "/images/gallery-event-cosplay.svg",
+    image: "/images/image5.jpg",
     title: "Anime night gathering",
     category: "Events"
   },
   {
     id: "g5",
-    image: "/images/gallery-jewelry-case.svg",
+    image: "/images/image2.jpg",
     title: "Display case details",
     category: "Products"
   },
   {
     id: "g6",
-    image: "/images/gallery-coffee-sigil.svg",
+    image: "/images/food1.jpg",
     title: "Coffee and sigils",
     category: "Cafe"
   },
   {
     id: "g7",
-    image: "/images/gallery-product-grid.svg",
+    image: "/images/image8.jpg",
     title: "Shelf drop highlights",
     category: "Products"
   },
   {
     id: "g8",
-    image: "/images/gallery-event-table.svg",
+    image: "/images/image2.jpg",
     title: "Community table",
     category: "Events"
   },
   {
     id: "g9",
-    image: "/images/gallery-raven-wall.svg",
+    image: "/images/food2.jpg",
     title: "Raven wall art",
     category: "Cafe"
   },
   {
     id: "g10",
-    image: "/images/gallery-box-set.svg",
+    image: "/images/image9.jpg",
     title: "Jewelry gift box",
     category: "Products"
   },
   {
     id: "g11",
-    image: "/images/gallery-night-counter.svg",
+    image: "/images/food3.jpg",
     title: "Counter after dusk",
     category: "Cafe"
   },
   {
     id: "g12",
-    image: "/images/gallery-event-night.svg",
+    image: "/images/image4.jpg",
     title: "Event night shadows",
     category: "Events"
   }

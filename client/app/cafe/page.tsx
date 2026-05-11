@@ -71,7 +71,7 @@ export default function CafePage() {
         <div className="cafe-steam absolute inset-0 -z-10" />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
           <div className="relative min-h-[520px] overflow-hidden rounded-[2rem] border border-[var(--border-subtle)]">
-            <Image src="/images/gallery-dessert-lotus.svg" alt="Lotus dessert" fill className="object-cover" />
+            <Image src="/images/food3.jpg" alt="Lotus dessert" fill className="object-cover" />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(10,4,5,0.74))]" />
             <div className="absolute inset-x-0 bottom-0 p-6">
               <p className="font-cinzel text-2xl text-white">Lotus Moon Jar</p>
@@ -81,7 +81,7 @@ export default function CafePage() {
             </div>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
-            {["/images/gallery-cafe-night.svg", "/images/gallery-coffee-sigil.svg"].map((image) => (
+            {["/images/food1.jpg", "/images/food2.jpg"].map((image) => (
               <div key={image} className="relative min-h-[220px] overflow-hidden rounded-[2rem] border border-[var(--border-subtle)]">
                 <Image src={image} alt="Raven café detail" fill className="object-cover" />
               </div>
