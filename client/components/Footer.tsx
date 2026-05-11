@@ -17,7 +17,10 @@ export function Footer() {
               </span>
             ))}
           </div>
-          <div aria-hidden="true" className="marquee-lane text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">
+          <div
+            aria-hidden="true"
+            className="marquee-lane text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]"
+          >
             {marqueeItems.map((item, index) => (
               <span key={`lane-b-${index}`} className="marquee-item">
                 {item}
@@ -29,28 +32,42 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-3 md:px-8">
         <div className="space-y-4">
           <div className="flex items-center gap-4">
-            <Image src="/images/logo-placeholder.svg" alt="Raven Store logo" width={52} height={52} />
+            <Image
+              src="/images/logo-placeholder.svg"
+              alt="Raven Store logo"
+              width={52}
+              height={52}
+            />
             <div>
-              <p className="font-cinzel text-lg tracking-[0.24em] text-[var(--text-primary)]">{site.name}</p>
+              <p className="font-cinzel text-lg tracking-[0.24em] text-[var(--text-primary)]">
+                {site.name}
+              </p>
               <p className="text-sm text-[var(--text-muted)]">{site.tagline}</p>
             </div>
           </div>
           <p className="max-w-sm text-sm leading-7 text-[var(--text-muted)]">
-            Jewelry, desserts, coffee, and midnight mood packed into one hidden corner of Tirana.
+            Jewelry, desserts, coffee, and midnight mood packed into the heart
+            of Tirana.
           </p>
         </div>
 
         <div className="space-y-4">
-          <p className="font-cinzel text-lg text-[var(--text-primary)]">Quick Links</p>
+          <p className="font-cinzel text-lg text-[var(--text-primary)]">
+            Quick Links
+          </p>
           <div className="grid grid-cols-2 gap-3 text-sm text-[var(--text-muted)]">
             {[
               ["/shop", "Shop"],
               ["/cafe", "Café"],
               ["/gallery", "Gallery"],
               ["/about", "About"],
-              ["/contact", "Contact"]
+              ["/contact", "Contact"],
             ].map(([href, label]) => (
-              <Link key={href} href={href} className="transition-colors hover:text-white">
+              <Link
+                key={href}
+                href={href}
+                className="transition-colors hover:text-white"
+              >
                 {label}
               </Link>
             ))}
@@ -58,11 +75,21 @@ export function Footer() {
         </div>
 
         <div className="space-y-4">
-          <p className="font-cinzel text-lg text-[var(--text-primary)]">Feed Preview</p>
+          <p className="font-cinzel text-lg text-[var(--text-primary)]">
+            Feed Preview
+          </p>
           <div className="grid grid-cols-4 gap-2">
             {preview.map((item) => (
-              <div key={item.id} className="relative aspect-square overflow-hidden rounded-2xl border border-[var(--border-subtle)]">
-                <Image src={item.image} alt={item.title} fill className="object-cover" />
+              <div
+                key={item.id}
+                className="relative aspect-square overflow-hidden rounded-2xl border border-[var(--border-subtle)]"
+              >
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
             ))}
           </div>

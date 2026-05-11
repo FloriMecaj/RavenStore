@@ -1,54 +1,37 @@
 "use client";
 
-import { FormEvent, useState } from "react";
-import { Instagram, Phone, Send } from "lucide-react";
+import { ExternalLink, Instagram, Phone } from "lucide-react";
 import { site } from "@/lib/data";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+
+const googleMapsUrl =
+  "https://www.google.com/maps?q=Raven+Store,+Rruga+Pjet%C3%ABr+Bogdani,+Tiran%C3%AB+1015&ftid=0x13503159ad7e7633:0xaa786da45df6d6e5&entry=gps&lucs=,47071704,47069508,94218641,94203019,47084304,94208458,94208447&g_ep=CAISEjI1LjE5LjEuNzU0OTg3NTEyMBgAINeCAyo_LDQ3MDcxNzA0LDQ3MDY5NTA4LDk0MjE4NjQxLDk0MjAzMDE5LDQ3MDg0MzA0LDk0MjA4NDU4LDk0MjA4NDQ3QgJBTA%3D%3D&skid=e6281b04-f443-487b-acaf-af2166901d84&g_st=ic";
 
 export function ContactPageClient() {
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setLoading(true);
-    window.setTimeout(() => setLoading(false), 1400);
-  };
-
   return (
-    <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:px-8 lg:grid-cols-[0.95fr_1.05fr]">
-      <Card className="p-8 md:p-10">
-        <p className="text-sm uppercase tracking-[0.32em] text-[var(--text-muted)]">Contact</p>
-        <h1 className="mt-4 font-cinzel text-4xl uppercase tracking-[0.12em] text-white">Step into the inbox</h1>
-        <p className="mt-5 max-w-xl text-base leading-8 text-[var(--text-muted)]">
-          Ask about jewelry drops, café visits, or event nights. Keep it short. We like mystery, not friction.
-        </p>
-
-        <form className="mt-10 space-y-5" onSubmit={handleSubmit}>
-          <Input placeholder="Name" required />
-          <Input type="email" placeholder="Email" required />
-          <select
-            className="flex h-14 w-full rounded-[1.25rem] border border-[var(--border-subtle)] bg-[rgba(255,255,255,0.03)] px-4 py-3 text-sm text-[var(--text-primary)] outline-none transition focus-visible:border-[var(--accent-crimson)] focus-visible:bg-[rgba(255,255,255,0.045)] focus-visible:ring-4 focus-visible:ring-[rgba(196,30,58,0.12)]"
-            defaultValue="Jewelry"
-          >
-            <option>Jewelry</option>
-            <option>Café</option>
-            <option>Events</option>
-          </select>
-          <Textarea className="resize-none" placeholder="Message" required />
-          <Button type="submit" className="w-full justify-center">
-            <Send size={16} className={loading ? "animate-pulse" : ""} />
-            {loading ? "Sending..." : "Send Message"}
-          </Button>
-        </form>
-      </Card>
-
+    <div className="mx-auto max-w-5xl px-5 py-16 md:px-8">
       <div className="space-y-6">
         <div className="rounded-[2rem] border border-[var(--border-subtle)] bg-mist p-8">
-          <p className="font-cinzel text-2xl text-white">Visit the shop</p>
+          <p className="text-sm uppercase tracking-[0.32em] text-[var(--text-muted)]">Contact</p>
+          <h1 className="mt-4 font-cinzel text-4xl uppercase tracking-[0.12em] text-white">Visit the shop</h1>
           <p className="mt-4 max-w-md text-sm leading-7 text-[var(--text-muted)]">{site.address}</p>
+        </div>
+        <div className="overflow-hidden rounded-[2rem] border border-[var(--border-subtle)]">
+          <iframe
+            title="Raven Store location"
+            src="https://www.google.com/maps?q=Raven+Store,+Rruga+Pjet%C3%ABr+Bogdani,+Tiran%C3%AB+1015&z=17&output=embed"
+            className="h-[320px] w-full"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+        <div>
+          <Button asChild variant="secondary">
+            <a href={googleMapsUrl} target="_blank" rel="noreferrer">
+              <ExternalLink size={16} />
+              Open in Google Maps
+            </a>
+          </Button>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
           <a

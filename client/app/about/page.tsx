@@ -1,7 +1,11 @@
-import { MapPin, Phone, Star } from "lucide-react";
+import { ExternalLink, MapPin, Phone, Star } from "lucide-react";
 import { CountUp } from "@/components/CountUp";
 import { ReviewCard } from "@/components/ReviewCard";
 import { reviews, site } from "@/lib/data";
+import { Button } from "@/components/ui/button";
+
+const googleMapsUrl =
+  "https://www.google.com/maps?q=Raven+Store,+Rruga+Pjet%C3%ABr+Bogdani,+Tiran%C3%AB+1015&ftid=0x13503159ad7e7633:0xaa786da45df6d6e5&entry=gps&lucs=,47071704,47069508,94218641,94203019,47084304,94208458,94208447&g_ep=CAISEjI1LjE5LjEuNzU0OTg3NTEyMBgAINeCAyo_LDQ3MDcxNzA0LDQ3MDY5NTA4LDk0MjE4NjQxLDk0MjAzMDE5LDQ3MDg0MzA0LDk0MjA4NDU4LDk0MjA4NDQ3QgJBTA%3D%3D&skid=e6281b04-f443-487b-acaf-af2166901d84&g_st=ic";
 
 export const metadata = {
   title: "About",
@@ -72,14 +76,24 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-[2rem] border border-[var(--border-subtle)]">
-            <iframe
-              title="Raven Store map"
-              src="https://www.google.com/maps?q=Rruga%20Pjeter%20Bogdani%2C%20Tirane%201015%2C%20Albania&z=15&output=embed"
-              className="h-[420px] w-full"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+          <div className="space-y-4">
+            <div className="overflow-hidden rounded-[2rem] border border-[var(--border-subtle)]">
+              <iframe
+                title="Raven Store map"
+                src="https://www.google.com/maps?q=Raven+Store,+Rruga+Pjet%C3%ABr+Bogdani,+Tiran%C3%AB+1015&z=17&output=embed"
+                className="h-[420px] w-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+            <div>
+              <Button asChild variant="secondary">
+                <a href={googleMapsUrl} target="_blank" rel="noreferrer">
+                  <ExternalLink size={16} />
+                  Open in Google Maps
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
