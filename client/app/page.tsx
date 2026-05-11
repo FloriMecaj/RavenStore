@@ -43,9 +43,9 @@ export default function HomePage() {
             alt="Raven Store jewelry background"
             fill
             priority
-            className="object-cover object-center opacity-18 mix-blend-screen md:opacity-20"
+            className="object-cover object-center opacity-18 mix-blend-screen md:opacity-18"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,4,5,0.82)_0%,rgba(10,4,5,0.54)_35%,rgba(10,4,5,0.8)_100%)] md:bg-[linear-gradient(90deg,rgba(10,4,5,1)_0%,rgba(10,4,5,0.92)_22%,rgba(10,4,5,0.55)_52%,rgba(10,4,5,0.14)_78%,rgba(10,4,5,0)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,4,5,0.82)_0%,rgba(10,4,5,0.54)_35%,rgba(10,4,5,0.8)_100%)] md:bg-[linear-gradient(90deg,rgba(10,4,5,0.86)_0%,rgba(10,4,5,0.68)_24%,rgba(10,4,5,0.38)_54%,rgba(10,4,5,0.08)_80%,rgba(10,4,5,0)_100%)]" />
           <div className="absolute inset-y-0 left-0 hidden w-32 bg-[radial-gradient(circle_at_left,rgba(10,4,5,0.95),rgba(10,4,5,0)_72%)] blur-2xl md:block" />
           <div className="absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,rgba(10,4,5,0)_0%,rgba(10,4,5,0.78)_68%,rgba(10,4,5,1)_100%)] blur-xl" />
         </div>
