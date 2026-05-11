@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0a0405;
+  --bg-secondary: #110608;
+  --accent-red: #8b0000;
+  --accent-crimson: #c41e3a;
+  --accent-gold: #c9a84c;
+  --text-primary: #f0e6e6;
+  --text-muted: #9a7070;
+  --glow-red: rgba(196, 30, 58, 0.4);
+  --border-subtle: rgba(139, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(196, 30, 58, 0.12), transparent 26%),
+    linear-gradient(180deg, rgba(10, 4, 5, 1) 0%, rgba(17, 6, 8, 1) 100%);
+  color: var(--text-primary);
+  font-family: var(--font-body), serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel), serif;
+}
+
+.hero-fog {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(196, 30, 58, 0.18), transparent 20%),
+    radial-gradient(circle at 80% 35%, rgba(139, 0, 0, 0.16), transparent 22%),
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.02), transparent 45%);
+  filter: blur(20px);
+  animation: drift 14s ease-in-out infinite alternate;
+}
+
+.cafe-steam {
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.05), transparent 16%),
+    radial-gradient(circle at 35% 55%, rgba(196, 30, 58, 0.08), transparent 18%);
+  filter: blur(30px);
+  animation: drift 18s ease-in-out infinite alternate;
+}
+
+.glitch {
+  position: relative;
+  text-shadow:
+    0 0 24px rgba(196, 30, 58, 0.26),
+    -2px 0 rgba(196, 30, 58, 0.35),
+    2px 0 rgba(201, 168, 76, 0.2);
+  animation: flicker 4s infinite;
+}
+
+.raven-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent-crimson);
+  background: linear-gradient(135deg, rgba(196, 30, 58, 0.2), rgba(139, 0, 0, 0.08));
+  padding: 0.95rem 1.4rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  box-shadow: 0 0 28px rgba(196, 30, 58, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.raven-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 34px rgba(196, 30, 58, 0.32);
+}
+
+.raven-button:active {
+  transform: scale(0.98);
+}
+
+.raven-button-secondary {
+  border-color: rgba(201, 168, 76, 0.45);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.raven-input {
+  width: 100%;
+  border-radius: 1.25rem;
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1rem 1.1rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.raven-input:focus {
+  border-color: var(--accent-crimson);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 0 0 4px rgba(196, 30, 58, 0.12);
+}
+
+.raven-input::placeholder {
+  color: var(--text-muted);
+}
+
+.custom-cursor-dot,
+.custom-cursor-ring {
+  position: absolute;
+  left: -8px;
+  top: -8px;
+  border-radius: 999px;
+}
+
+.custom-cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-crimson);
+  box-shadow: 0 0 18px rgba(196, 30, 58, 0.9);
+}
+
+.custom-cursor-ring {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(196, 30, 58, 0.35);
+}
+
+.matrix-rain::before {
+  content: "カフェ 鴉 赤月 夜 ジュエリー 夢 影";
+  position: absolute;
+  inset: 0;
+  color: rgba(196, 30, 58, 0.15);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  letter-spacing: 1rem;
+  line-height: 2.5rem;
+  white-space: pre-wrap;
+  padding: 3rem;
+  animation: matrixFall 5s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 62%, 64%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 63% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(-1%, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(1%, -1%, 0) scale(1.08);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 18px rgba(196, 30, 58, 0.18);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(196, 30, 58, 0.36);
+  }
+}
+
+@keyframes matrixFall {
+  from {
+    transform: translateY(-5%);
+  }
+  to {
+    transform: translateY(5%);
+  }
+}
