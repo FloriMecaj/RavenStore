@@ -33,7 +33,7 @@ export function Footer() {
         <div className="space-y-4">
           <div className="flex items-center gap-4">
             <Image
-              src="/images/logo-placeholder.svg"
+              src="/images/logo.jpg"
               alt="Raven Store logo"
               width={52}
               height={52}

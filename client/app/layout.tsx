@@ -29,15 +29,15 @@ export const metadata: Metadata = {
   description:
     "Anime jewelry, moody café energy, and late-night gothic atmosphere in the heart of Tirana.",
   icons: {
-    icon: "/images/logo-placeholder.svg",
-    shortcut: "/images/logo-placeholder.svg",
-    apple: "/images/logo-placeholder.svg"
+    icon: "/images/logo.jpg",
+    shortcut: "/images/logo.jpg",
+    apple: "/images/logo.jpg"
   },
   openGraph: {
     title: `${site.name} | ${site.tagline}`,
     description:
       "Step into a secret late-night anime world with jewelry, coffee, desserts, and crimson atmosphere.",
-    images: ["/images/logo-placeholder.svg"]
+    images: ["/images/logo.jpg"]
   }
 };
 

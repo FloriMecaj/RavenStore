@@ -45,7 +45,7 @@ export function Navbar() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
           <Link href="/" className="group flex items-center gap-3">
             <div className="relative h-12 w-12 overflow-hidden rounded-full border border-[var(--border-subtle)] shadow-glow">
-              <Image src="/images/logo-placeholder.svg" alt="Raven Store logo" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+              <Image src="/images/logo.jpg" alt="Raven Store logo" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
             <div>
               <p className="font-cinzel text-sm tracking-[0.35em] text-[var(--text-primary)]">RAVEN</p>

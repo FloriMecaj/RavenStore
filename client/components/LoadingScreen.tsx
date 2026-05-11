@@ -15,7 +15,7 @@ export function LoadingScreen() {
       const timer = window.setTimeout(() => {
         window.sessionStorage.setItem("raven-loader-seen", "1");
         setVisible(false);
-      }, 2800);
+      }, 1800);
       return () => window.clearTimeout(timer);
     }
   }, []);
@@ -34,10 +34,10 @@ export function LoadingScreen() {
             <motion.div
               initial={{ scale: 0.7, opacity: 0, y: 40 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
-              transition={{ duration: 0.9 }}
+              transition={{ duration: 0.6 }}
             >
               <Image
-                src="/images/logo-placeholder.svg"
+                src="/images/logo.jpg"
                 alt="Raven Store emblem"
                 width={132}
                 height={132}
@@ -48,7 +48,7 @@ export function LoadingScreen() {
               className="font-cinzel text-2xl tracking-[0.45em] text-[var(--text-primary)]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.2, duration: 0.35 }}
             >
               RAVEN STORE
             </motion.p>
