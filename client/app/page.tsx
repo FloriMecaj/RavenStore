@@ -1,6 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, ChevronDown, Coffee, Gem, MapPin, MoonStar, Sparkles, Star } from "lucide-react";
+import {
+  ArrowUpRight,
+  ChevronDown,
+  Coffee,
+  Gem,
+  MapPin,
+  MoonStar,
+  Sparkles,
+  Star,
+} from "lucide-react";
 import { ParticleField } from "@/components/ParticleField";
 import { ProductCard } from "@/components/ProductCard";
 import { ReviewCard } from "@/components/ReviewCard";
@@ -12,7 +21,7 @@ import { Card } from "@/components/ui/card";
 
 export const metadata = {
   title: "Home",
-  description: "Anime jewelry and café atmosphere in a crimson gothic world."
+  description: "Anime jewelry and café atmosphere in a crimson gothic world.",
 };
 
 export default function HomePage() {
@@ -22,7 +31,7 @@ export default function HomePage() {
     menu.cocktails[0],
     menu.hotDrinks[0],
     menu.desserts[0],
-    menu.snacks[0]
+    menu.snacks[0],
   ];
 
   return (
@@ -32,7 +41,10 @@ export default function HomePage() {
         <ParticleField />
         <div className="mx-auto flex min-h-[calc(100vh-6rem)] max-w-7xl flex-col justify-center px-5 py-20 md:px-8">
           <div className="max-w-4xl">
-            <Badge variant="outline" className="mb-8 gap-3 px-4 py-2 tracking-[0.3em]">
+            <Badge
+              variant="outline"
+              className="mb-8 gap-3 px-4 py-2 tracking-[0.3em]"
+            >
               <span className="inline-block h-2 w-2 rounded-full bg-[var(--accent-crimson)] shadow-glow" />
               4.9 / 5 on Google · 287 reviews
             </Badge>
@@ -40,7 +52,8 @@ export default function HomePage() {
               RAVEN STORE
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--text-muted)] md:text-xl">
-              Anime Jewelry & Café · Tirana, Albania. A secret corner of crimson metal, midnight coffee, and cinematic calm.
+              Anime Jewelry & Café · Tirana, Albania. A midnight coffee, and
+              cinematic calm.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button asChild>
@@ -71,29 +84,33 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-16">
         <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="rounded-[2rem] border border-[var(--border-subtle)] bg-mist p-8 md:p-10">
-            <p className="text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">Why it feels alive</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">
+              Why it feels alive
+            </p>
             <div className="mt-6 grid gap-5 md:grid-cols-3">
               {[
                 {
                   icon: Sparkles,
                   title: "Curated drops",
-                  text: "Jewelry, shirts, stickers, and small relics that feel selected, not mass-posted."
+                  text: "Jewelry, shirts, stickers, and small relics that feel selected, not mass-posted.",
                 },
                 {
                   icon: MoonStar,
                   title: "Late café mood",
-                  text: "Desserts, coffee, and red-light atmosphere built for slow nights and long conversations."
+                  text: "Desserts, coffee, and red-light atmosphere built for slow nights and long conversations.",
                 },
                 {
                   icon: MapPin,
                   title: "Real place, real scene",
-                  text: "A little gem in Tirana with regulars, event nights, and a recognizable visual identity."
-                }
+                  text: "A little gem in Tirana with regulars, event nights, and a recognizable visual identity.",
+                },
               ].map(({ icon: Icon, title, text }) => (
                 <Card key={title} className="rounded-[1.5rem] p-5">
                   <Icon className="text-[var(--accent-crimson)]" size={18} />
                   <p className="mt-4 font-cinzel text-lg text-white">{title}</p>
-                  <p className="mt-2 text-sm leading-7 text-[var(--text-muted)]">{text}</p>
+                  <p className="mt-2 text-sm leading-7 text-[var(--text-muted)]">
+                    {text}
+                  </p>
                 </Card>
               ))}
             </div>
@@ -101,20 +118,28 @@ export default function HomePage() {
 
           <div className="grid gap-6 sm:grid-cols-3 lg:grid-cols-1">
             <Card className="p-6">
-              <p className="text-sm uppercase tracking-[0.24em] text-[var(--text-muted)]">Rating</p>
+              <p className="text-sm uppercase tracking-[0.24em] text-[var(--text-muted)]">
+                Rating
+              </p>
               <p className="mt-3 font-cinzel text-5xl text-white">
                 <CountUp value={4.9} decimals={1} suffix="★" />
               </p>
             </Card>
             <Card className="p-6">
-              <p className="text-sm uppercase tracking-[0.24em] text-[var(--text-muted)]">Reviews</p>
+              <p className="text-sm uppercase tracking-[0.24em] text-[var(--text-muted)]">
+                Reviews
+              </p>
               <p className="mt-3 font-cinzel text-5xl text-white">
                 <CountUp value={287} suffix="+" />
               </p>
             </Card>
             <Card className="p-6">
-              <p className="text-sm uppercase tracking-[0.24em] text-[var(--text-muted)]">Night energy</p>
-              <p className="mt-3 font-cinzel text-3xl text-white">Open until 11 PM</p>
+              <p className="text-sm uppercase tracking-[0.24em] text-[var(--text-muted)]">
+                Night energy
+              </p>
+              <p className="mt-3 font-cinzel text-3xl text-white">
+                Open until 11 PM
+              </p>
             </Card>
           </div>
         </div>
@@ -123,12 +148,17 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-16">
         <div className="mb-8 flex items-end justify-between gap-6">
           <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">Featured products</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">
+              Featured products
+            </p>
             <h2 className="mt-3 font-cinzel text-3xl uppercase tracking-[0.12em] text-white md:text-5xl">
               Pieces with actual presence
             </h2>
           </div>
-          <Link href="/shop" className="hidden items-center gap-2 text-sm uppercase tracking-[0.24em] text-[var(--accent-gold)] md:inline-flex">
+          <Link
+            href="/shop"
+            className="hidden items-center gap-2 text-sm uppercase tracking-[0.24em] text-[var(--accent-gold)] md:inline-flex"
+          >
             View full shop
             <ArrowUpRight size={16} />
           </Link>
@@ -151,12 +181,20 @@ export default function HomePage() {
             />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(10,4,5,0.88))]" />
             <div className="absolute inset-x-0 bottom-0 p-8">
-              <p className="text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">Café spotlight</p>
-              <h2 className="mt-3 font-cinzel text-3xl uppercase tracking-[0.12em] text-white">Dessert, coffee, and a slower pulse</h2>
-              <p className="mt-4 max-w-md text-sm leading-7 text-[var(--text-muted)]">
-                The café side should feel visible from the first scroll, not hidden behind another route.
+              <p className="text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">
+                Café spotlight
               </p>
-              <Link href="/cafe" className="mt-6 inline-flex items-center gap-2 text-sm uppercase tracking-[0.24em] text-[var(--accent-gold)]">
+              <h2 className="mt-3 font-cinzel text-3xl uppercase tracking-[0.12em] text-white">
+                Dessert, coffee, and a slower pulse
+              </h2>
+              <p className="mt-4 max-w-md text-sm leading-7 text-[var(--text-muted)]">
+                The café side should feel visible from the first scroll, not
+                hidden behind another route.
+              </p>
+              <Link
+                href="/cafe"
+                className="mt-6 inline-flex items-center gap-2 text-sm uppercase tracking-[0.24em] text-[var(--accent-gold)]"
+              >
                 Open café page
                 <ArrowUpRight size={16} />
               </Link>
@@ -166,9 +204,15 @@ export default function HomePage() {
           <div className="grid gap-5 md:grid-cols-2">
             {menuPreview.map((item) => (
               <Card key={item.name} className="rounded-[1.75rem] p-6">
-                <p className="text-xs uppercase tracking-[0.24em] text-[var(--accent-gold)]">{item.price}</p>
-                <p className="mt-3 font-cinzel text-xl text-white">{item.name}</p>
-                <p className="mt-2 text-sm leading-7 text-[var(--text-muted)]">{item.description}</p>
+                <p className="text-xs uppercase tracking-[0.24em] text-[var(--accent-gold)]">
+                  {item.price}
+                </p>
+                <p className="mt-3 font-cinzel text-xl text-white">
+                  {item.name}
+                </p>
+                <p className="mt-2 text-sm leading-7 text-[var(--text-muted)]">
+                  {item.description}
+                </p>
               </Card>
             ))}
           </div>
@@ -178,12 +222,17 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-16">
         <div className="mb-8 flex items-end justify-between gap-6">
           <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">Gallery preview</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">
+              Gallery preview
+            </p>
             <h2 className="mt-3 font-cinzel text-3xl uppercase tracking-[0.12em] text-white md:text-5xl">
               Frames from the store
             </h2>
           </div>
-          <Link href="/gallery" className="hidden items-center gap-2 text-sm uppercase tracking-[0.24em] text-[var(--accent-gold)] md:inline-flex">
+          <Link
+            href="/gallery"
+            className="hidden items-center gap-2 text-sm uppercase tracking-[0.24em] text-[var(--accent-gold)] md:inline-flex"
+          >
             Open gallery
             <ArrowUpRight size={16} />
           </Link>
@@ -195,11 +244,18 @@ export default function HomePage() {
               href="/gallery"
               className="group relative block min-h-[320px] overflow-hidden rounded-[1.75rem] border border-[var(--border-subtle)]"
             >
-              <Image src={item.image} alt={item.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(10,4,5,0.88))]" />
               <div className="absolute inset-x-0 bottom-0 p-5">
                 <p className="font-cinzel text-lg text-white">{item.title}</p>
-                <p className="mt-1 text-xs uppercase tracking-[0.24em] text-[var(--text-muted)]">{item.category}</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.24em] text-[var(--text-muted)]">
+                  {item.category}
+                </p>
               </div>
             </Link>
           ))}
@@ -208,7 +264,9 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-16">
         <div className="mb-8">
-          <p className="text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">What people say</p>
+          <p className="text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">
+            What people say
+          </p>
           <h2 className="mt-3 font-cinzel text-3xl uppercase tracking-[0.12em] text-white md:text-5xl">
             Atmosphere people actually mention
           </h2>
@@ -224,12 +282,15 @@ export default function HomePage() {
         <Card className="rounded-[2.5rem] bg-mist p-8 md:p-12">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <p className="text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">Plan the visit</p>
+              <p className="text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">
+                Plan the visit
+              </p>
               <h2 className="mt-3 font-cinzel text-3xl uppercase tracking-[0.12em] text-white md:text-5xl">
                 More than a hero banner. More like a scene.
               </h2>
               <p className="mt-4 text-base leading-8 text-[var(--text-muted)]">
-                Shop the jewelry, stay for dessert, and keep the address saved. This page should invite action, not just look dramatic.
+                Shop the jewelry, stay for dessert, and keep the address saved.
+                This page should invite action, not just look dramatic.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
