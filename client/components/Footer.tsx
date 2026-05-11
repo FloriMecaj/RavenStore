@@ -96,7 +96,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-[var(--border-subtle)] px-5 py-4 text-center text-xs uppercase tracking-[0.24em] text-[var(--text-muted)] md:px-8">
-        © 2024 Raven Store · Tirana, Albania · Made with love for anime lovers
+        © 2026 Raven Store · Tirana, Albania · Made with love for anime lovers
       </div>
     </footer>
   );
