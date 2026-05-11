@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Instagram, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { Instagram } from "lucide-react";
+import { motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import type { GalleryItem } from "@/lib/data";
 
@@ -16,7 +16,6 @@ const filters = ["All", "Products", "Cafe", "Events"] as const;
 export function InstagramGrid({ fallback }: { fallback: GalleryItem[] }) {
   const [items, setItems] = useState<GalleryItem[]>(fallback);
   const [active, setActive] = useState<(typeof filters)[number]>("All");
-  const [selected, setSelected] = useState<GalleryItem | null>(null);
   const [source, setSource] = useState<InstagramResponse["source"]>("fallback");
 
   useEffect(() => {
@@ -66,11 +65,9 @@ export function InstagramGrid({ fallback }: { fallback: GalleryItem[] }) {
 
       <motion.div layout className="columns-1 gap-5 md:columns-2 xl:columns-3">
         {filtered.map((item, index) => (
-          <motion.button
+          <motion.article
             layout
             key={item.id}
-            type="button"
-            onClick={() => setSelected(item)}
             className="group relative mb-5 block w-full overflow-hidden rounded-[1.75rem] border border-[var(--border-subtle)] text-left"
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -88,37 +85,9 @@ export function InstagramGrid({ fallback }: { fallback: GalleryItem[] }) {
               </div>
               <Instagram className="text-[var(--text-primary)]" size={18} />
             </div>
-          </motion.button>
+          </motion.article>
         ))}
       </motion.div>
-
-      <AnimatePresence>
-        {selected ? (
-          <motion.div
-            className="fixed inset-0 z-[65] flex items-center justify-center bg-[rgba(10,4,5,0.92)] p-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <button
-              type="button"
-              aria-label="Close lightbox"
-              className="absolute right-6 top-6 rounded-full border border-[var(--border-subtle)] p-3 text-white"
-              onClick={() => setSelected(null)}
-            >
-              <X size={18} />
-            </button>
-            <motion.div
-              initial={{ scale: 0.94, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.94, opacity: 0 }}
-              className="relative h-[80vh] w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border-subtle)]"
-            >
-              <Image src={selected.image} alt={selected.title} fill className="object-cover" />
-            </motion.div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
     </div>
   );
 }
