@@ -153,6 +153,26 @@ a {
   animation: matrixFall 5s linear infinite;
 }
 
+.marquee-track {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-lane {
+  display: flex;
+  min-width: 100%;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2.5rem;
+  animation: marquee 22s linear infinite;
+}
+
+.marquee-item {
+  white-space: nowrap;
+}
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
@@ -185,7 +205,7 @@ a {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 

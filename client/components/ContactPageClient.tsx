@@ -3,6 +3,10 @@
 import { FormEvent, useState } from "react";
 import { Instagram, Phone, Send } from "lucide-react";
 import { site } from "@/lib/data";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 export function ContactPageClient() {
   const [loading, setLoading] = useState(false);
@@ -15,7 +19,7 @@ export function ContactPageClient() {
 
   return (
     <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:px-8 lg:grid-cols-[0.95fr_1.05fr]">
-      <div className="rounded-[2rem] border border-[var(--border-subtle)] bg-[rgba(255,255,255,0.03)] p-8 md:p-10">
+      <Card className="p-8 md:p-10">
         <p className="text-sm uppercase tracking-[0.32em] text-[var(--text-muted)]">Contact</p>
         <h1 className="mt-4 font-cinzel text-4xl uppercase tracking-[0.12em] text-white">Step into the inbox</h1>
         <p className="mt-5 max-w-xl text-base leading-8 text-[var(--text-muted)]">
@@ -23,20 +27,23 @@ export function ContactPageClient() {
         </p>
 
         <form className="mt-10 space-y-5" onSubmit={handleSubmit}>
-          <input className="raven-input" placeholder="Name" required />
-          <input className="raven-input" type="email" placeholder="Email" required />
-          <select className="raven-input" defaultValue="Jewelry">
+          <Input placeholder="Name" required />
+          <Input type="email" placeholder="Email" required />
+          <select
+            className="flex h-14 w-full rounded-[1.25rem] border border-[var(--border-subtle)] bg-[rgba(255,255,255,0.03)] px-4 py-3 text-sm text-[var(--text-primary)] outline-none transition focus-visible:border-[var(--accent-crimson)] focus-visible:bg-[rgba(255,255,255,0.045)] focus-visible:ring-4 focus-visible:ring-[rgba(196,30,58,0.12)]"
+            defaultValue="Jewelry"
+          >
             <option>Jewelry</option>
             <option>Café</option>
             <option>Events</option>
           </select>
-          <textarea className="raven-input min-h-40 resize-none" placeholder="Message" required />
-          <button type="submit" className="raven-button w-full justify-center">
+          <Textarea className="resize-none" placeholder="Message" required />
+          <Button type="submit" className="w-full justify-center">
             <Send size={16} className={loading ? "animate-pulse" : ""} />
             {loading ? "Sending..." : "Send Message"}
-          </button>
+          </Button>
         </form>
-      </div>
+      </Card>
 
       <div className="space-y-6">
         <div className="rounded-[2rem] border border-[var(--border-subtle)] bg-mist p-8">

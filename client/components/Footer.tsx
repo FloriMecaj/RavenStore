@@ -4,12 +4,26 @@ import { japaneseStrip, site, fallbackGallery } from "@/lib/data";
 
 export function Footer() {
   const preview = fallbackGallery.slice(0, 4);
+  const marqueeItems = [...japaneseStrip, ...japaneseStrip];
 
   return (
     <footer className="border-t border-[var(--border-subtle)] bg-[rgba(10,4,5,0.95)]">
       <div className="overflow-hidden border-b border-[var(--border-subtle)] py-3">
-        <div className="animate-marquee whitespace-nowrap text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">
-          {japaneseStrip.map((item) => `${item}  ·  `).join(" ")}
+        <div className="marquee-track">
+          <div className="marquee-lane text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">
+            {marqueeItems.map((item, index) => (
+              <span key={`lane-a-${index}`} className="marquee-item">
+                {item}
+              </span>
+            ))}
+          </div>
+          <div aria-hidden="true" className="marquee-lane text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">
+            {marqueeItems.map((item, index) => (
+              <span key={`lane-b-${index}`} className="marquee-item">
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-3 md:px-8">

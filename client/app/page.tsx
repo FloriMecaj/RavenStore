@@ -6,6 +6,9 @@ import { ProductCard } from "@/components/ProductCard";
 import { ReviewCard } from "@/components/ReviewCard";
 import { CountUp } from "@/components/CountUp";
 import { fallbackGallery, menu, products, reviews, site } from "@/lib/data";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 export const metadata = {
   title: "Home",
@@ -29,10 +32,10 @@ export default function HomePage() {
         <ParticleField />
         <div className="mx-auto flex min-h-[calc(100vh-6rem)] max-w-7xl flex-col justify-center px-5 py-20 md:px-8">
           <div className="max-w-4xl">
-            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-[var(--border-subtle)] bg-[rgba(255,255,255,0.03)] px-4 py-2 text-xs uppercase tracking-[0.3em] text-[var(--text-muted)]">
+            <Badge variant="outline" className="mb-8 gap-3 px-4 py-2 tracking-[0.3em]">
               <span className="inline-block h-2 w-2 rounded-full bg-[var(--accent-crimson)] shadow-glow" />
               4.9 / 5 on Google · 287 reviews
-            </div>
+            </Badge>
             <h1 className="glitch font-cinzel text-5xl uppercase leading-none tracking-[0.16em] text-white md:text-8xl">
               RAVEN STORE
             </h1>
@@ -40,14 +43,18 @@ export default function HomePage() {
               Anime Jewelry & Café · Tirana, Albania. A secret corner of crimson metal, midnight coffee, and cinematic calm.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link href="/shop" className="raven-button">
-                <Gem size={16} />
-                Explore Jewelry
-              </Link>
-              <Link href="/cafe" className="raven-button raven-button-secondary">
-                <Coffee size={16} />
-                Visit the Café
-              </Link>
+              <Button asChild>
+                <Link href="/shop">
+                  <Gem size={16} />
+                  Explore Jewelry
+                </Link>
+              </Button>
+              <Button asChild variant="secondary">
+                <Link href="/cafe">
+                  <Coffee size={16} />
+                  Visit the Café
+                </Link>
+              </Button>
             </div>
             <div className="mt-10 grid gap-4 text-sm uppercase tracking-[0.22em] text-[var(--text-muted)] md:grid-cols-3">
               <p>{site.address}</p>
@@ -83,32 +90,32 @@ export default function HomePage() {
                   text: "A little gem in Tirana with regulars, event nights, and a recognizable visual identity."
                 }
               ].map(({ icon: Icon, title, text }) => (
-                <div key={title} className="rounded-[1.5rem] border border-[var(--border-subtle)] bg-[rgba(255,255,255,0.03)] p-5">
+                <Card key={title} className="rounded-[1.5rem] p-5">
                   <Icon className="text-[var(--accent-crimson)]" size={18} />
                   <p className="mt-4 font-cinzel text-lg text-white">{title}</p>
                   <p className="mt-2 text-sm leading-7 text-[var(--text-muted)]">{text}</p>
-                </div>
+                </Card>
               ))}
             </div>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-3 lg:grid-cols-1">
-            <div className="rounded-[2rem] border border-[var(--border-subtle)] bg-[rgba(255,255,255,0.03)] p-6">
+            <Card className="p-6">
               <p className="text-sm uppercase tracking-[0.24em] text-[var(--text-muted)]">Rating</p>
               <p className="mt-3 font-cinzel text-5xl text-white">
                 <CountUp value={4.9} decimals={1} suffix="★" />
               </p>
-            </div>
-            <div className="rounded-[2rem] border border-[var(--border-subtle)] bg-[rgba(255,255,255,0.03)] p-6">
+            </Card>
+            <Card className="p-6">
               <p className="text-sm uppercase tracking-[0.24em] text-[var(--text-muted)]">Reviews</p>
               <p className="mt-3 font-cinzel text-5xl text-white">
                 <CountUp value={287} suffix="+" />
               </p>
-            </div>
-            <div className="rounded-[2rem] border border-[var(--border-subtle)] bg-[rgba(255,255,255,0.03)] p-6">
+            </Card>
+            <Card className="p-6">
               <p className="text-sm uppercase tracking-[0.24em] text-[var(--text-muted)]">Night energy</p>
               <p className="mt-3 font-cinzel text-3xl text-white">Open until 11 PM</p>
-            </div>
+            </Card>
           </div>
         </div>
       </section>
@@ -158,11 +165,11 @@ export default function HomePage() {
 
           <div className="grid gap-5 md:grid-cols-2">
             {menuPreview.map((item) => (
-              <div key={item.name} className="rounded-[1.75rem] border border-[var(--border-subtle)] bg-[rgba(255,255,255,0.03)] p-6">
+              <Card key={item.name} className="rounded-[1.75rem] p-6">
                 <p className="text-xs uppercase tracking-[0.24em] text-[var(--accent-gold)]">{item.price}</p>
                 <p className="mt-3 font-cinzel text-xl text-white">{item.name}</p>
                 <p className="mt-2 text-sm leading-7 text-[var(--text-muted)]">{item.description}</p>
-              </div>
+              </Card>
             ))}
           </div>
         </div>
@@ -214,7 +221,7 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-20">
-        <div className="rounded-[2.5rem] border border-[var(--border-subtle)] bg-mist p-8 md:p-12">
+        <Card className="rounded-[2.5rem] bg-mist p-8 md:p-12">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
               <p className="text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">Plan the visit</p>
@@ -226,17 +233,21 @@ export default function HomePage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <Link href="/about" className="raven-button raven-button-secondary">
-                <Star size={16} />
-                About Raven
-              </Link>
-              <Link href="/contact" className="raven-button">
-                <MapPin size={16} />
-                Contact & Visit
-              </Link>
+              <Button asChild variant="secondary">
+                <Link href="/about">
+                  <Star size={16} />
+                  About Raven
+                </Link>
+              </Button>
+              <Button asChild>
+                <Link href="/contact">
+                  <MapPin size={16} />
+                  Contact & Visit
+                </Link>
+              </Button>
             </div>
           </div>
-        </div>
+        </Card>
       </section>
     </div>
   );
