@@ -60,7 +60,7 @@ export default function HomePage() {
               <span className="inline-block h-2 w-2 rounded-full bg-[var(--accent-crimson)] shadow-glow" />
               4.9 / 5 on Google · 287 reviews
             </Badge>
-            <h1 className="glitch font-cinzel text-5xl uppercase leading-none tracking-[0.16em] text-white md:text-8xl">
+            <h1 className="font-cinzel text-5xl uppercase leading-none tracking-[0.16em] text-white md:text-8xl">
               RAVEN STORE
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--text-muted)] md:text-xl">
